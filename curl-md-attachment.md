@@ -31,22 +31,25 @@ Because I haven't wired up something that views multiline strings in JSON nicely
     export THISFILE=curl-md-attachment.md
     export JSON={\"src\":\"$THISFILE\"}
     export DOC=$COUCH/quuxzzrt
-    export ATT=$COUCH/_attachments/$THISFILE
+    export ATT=$DOC/$THISFILE
 
     echo JSON: $JSON
     echo DOC: $DOC
     echo ATT: $ATT
 
 # Up
-
-This hasn't yet been certified to work on my machine.   
         
     curl -X PUT -d $JSON $DOC
-    curl -X PUT -d @$THISFILE $ATT
+
+REV must be set to the latest revision.
+
+    curl -X PUT -d @$THISFILE $ATT?rev=$REV
 
 # Down
 
-    curl -X DELETE $ATT
+REV must be set to the latest revision.
+
+    curl -X DELETE $DOC?rev=$REV
 
 # Steps
 
