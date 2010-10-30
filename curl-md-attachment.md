@@ -43,7 +43,7 @@ Because I haven't wired up something that views multiline strings in JSON nicely
 
 REV must be set to the latest revision.
 
-    curl -X PUT -d @$THISFILE $ATT?rev=$REV
+    curl -X PUT --data-binary @$THISFILE $ATT?rev=$REV
 
 # Down
 
