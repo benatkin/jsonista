@@ -17,7 +17,7 @@ partially acquired knowledge is important.
 
 * date: 2010-10-30 2:12PM MST
 * url: http://kylecordes.com/2010/like-it-link-it
-** title: If you like it, make a link to it – a plea for real links
+  * title: If you like it, make a link to it – a plea for real links
 * location: Atlas Purveyors in Boulder, CO
 * tags: content, linking, search
 
