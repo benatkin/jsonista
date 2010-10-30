@@ -55,6 +55,6 @@ REV must be set to the latest revision.
 
 * Run upload commands on terminal, fixing any errors
 * Remove not-tested statement, delete doc, re-run
-* Visit and share [link](http://benatkin.cloudant.com/jsonista/quuxzzrt/_attachments/curl-md-attachment.md)
+* Visit and share [link](http://benatkin.cloudant.com/jsonista/quuxzzrt/curl-md-attachment.md)
 * Note what headers couchdb sends for the attachment
 
