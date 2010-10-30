@@ -26,10 +26,10 @@ Because I haven't wired up something that views multiline strings in JSON nicely
 # Before
 
     export UPASS=benatkin:$(cat ~/.cloudantpw)    
-    export CLOUDANT=http://$UPASS@benatkin.cloudant.com
+    export CLOUDANT=https://$UPASS@benatkin.cloudant.com
     export COUCH=$CLOUDANT/jsonista
     export THISFILE=curl-md-attachment.md
-    export JSON='{"src": "$THISFILE}"'
+    export JSON={\"src\":\"$THISFILE\"}
     export DOC=$COUCH/quuxzzrt
     export ATT=$COUCH/_attachments/$THISFILE
 
@@ -41,8 +41,8 @@ Because I haven't wired up something that views multiline strings in JSON nicely
 
 This hasn't yet been certified to work on my machine.   
         
-    curl -X PUT -D $JSON $DOC
-    curl -X PUT -F $THISFILE $ATT
+    curl -X PUT -d $JSON $DOC
+    curl -X PUT -d @$THISFILE $ATT
 
 # Down
 
