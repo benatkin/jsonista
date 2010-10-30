@@ -1,60 +1,7 @@
-# Curl a Markdown Attachment
+# jsonista
 
-Use curl to create a document with a markdown-formatted attachment. 
+Files are stored in directories based on dates. Quickly jump to:
 
-* slug: curl-md-attachment
-* tags: curl, markdown, attachment, bash
-* date: 2010-10-29 7:37 PM MST
-* location: Metropolis Coffee in Denver, CO
-
-# Huh?
-
-I'm building a custom blog & wiki engine for jsonista.com. I may extract it later.
-
-# Why curl?
-
-After seeing Matthias Meyer's recent CouchDB presentation, I want to become fluent in talking to CouchDB with curl.
-
-# Why markdown?
-
-It's nice in Writer on my iPad, and nice on Github. I also want to make it nice on CouchDB. My plan is to parse the XML and grab data from li's.
-
-# Why in an attachment?
-
-Because I haven't wired up something that views multiline strings in JSON nicely, that's why!
-
-# Before
-
-    export UPASS=benatkin:$(cat ~/.cloudantpw)    
-    export CLOUDANT=https://$UPASS@benatkin.cloudant.com
-    export COUCH=$CLOUDANT/jsonista
-    export THISFILE=curl-md-attachment.md
-    export JSON={\"src\":\"$THISFILE\"}
-    export DOC=$COUCH/quuxzzrt
-    export ATT=$DOC/$THISFILE
-
-    echo JSON: $JSON
-    echo DOC: $DOC
-    echo ATT: $ATT
-
-# Up
-        
-    curl -X PUT -d $JSON $DOC
-
-REV must be set to the latest revision.
-
-    curl -X PUT --data-binary @$THISFILE $ATT?rev=$REV
-
-# Down
-
-REV must be set to the latest revision.
-
-    curl -X DELETE $DOC?rev=$REV
-
-# Steps
-
-* Run upload commands on terminal, fixing any errors
-* Remove not-tested statement, delete doc, re-run
-* Visit and share [link](http://benatkin.cloudant.com/jsonista/quuxzzrt/curl-md-attachment.md)
-* Note what headers couchdb sends for the attachment
+* [October 2010](http://github.com/benatkin/jsonista/tree/master/2010/10/)
+* [November 2010](http://github.com/benatkin/jsonista/tree/master/2010/11/)
 
