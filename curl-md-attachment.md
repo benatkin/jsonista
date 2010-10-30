@@ -29,9 +29,9 @@ Because I haven't wired up something that views multiline strings in JSON nicely
     export CLOUDANT=http://$UPASS@benatkin.cloudant.com
     export COUCH=$CLOUDANT/jsonista
     export THISFILE=curl-md-attachment.md
-    export JSON='{"src": "$(THISFILE)}"'
+    export JSON='{"src": "$THISFILE}"'
     export DOC=$COUCH/quuxzzrt
-    export ATT=$DB/_attachments/$THISFILE
+    export ATT=$COUCH/_attachments/$THISFILE
 
     echo JSON: $JSON
     echo DOC: $DOC
