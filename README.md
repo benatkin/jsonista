@@ -28,9 +28,7 @@ Because I haven't wired up something that views multiline strings in JSON nicely
     export UPASS=benatkin:$(cat ~/.cloudantpw)    
     export CLOUDANT=http://$UPASS@benatkin.cloudant.com
     export COUCH=$CLOUDANT/jsonista
-    export WRITER=~/Dropbox/Writer    
     export THISFILE=curl-md-attachment.md
-    export THISPATH=$WRITER/benatkin
     export JSON='{"src": "$(THISFILE)}"'
     export DOC=$COUCH/quuxzzrt
     export ATT=$DB/_attachments/$THISFILE
