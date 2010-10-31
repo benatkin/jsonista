@@ -18,3 +18,9 @@ Run the Before section in [curl-md-attachment.md](../29/curl-md-attachment.md).
     export REV=$(curl $DOC | sed 's/.*_rev"[^"]*"//;s/".*//')
     export HEADER="Content-Type:text/plain"
     curl -X PUT --data-binary @../29/$THISFILE $ATT?rev=$REV -H $HEADER
+
+# Result
+
+Instead of trying to download the file, visiting 
+[curl-md-attachment.md](http://benatkin.cloudant.com/jsonista/quuxzzrt/curl-md-attachment.md)
+on Cloudant now shows the plain text in the browser.
