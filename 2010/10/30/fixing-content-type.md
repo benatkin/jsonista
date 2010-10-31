@@ -8,3 +8,13 @@ can write a stand-alone script.
 
 * date: 2010-10-30 5:48PM MST
 * tags: attachments, bash, curl, http, sed
+
+# Before
+
+Run the Before section in [curl-md-attachment.md](../29/curl-md-attachment.md).
+
+# Up
+
+    export REV=$(curl $DOC | sed 's/.*_rev"[^"]*"//;s/".*//')
+    export HEADER="Content-Type:text/plain"
+    curl -X PUT --data-binary @../29/$THISFILE $ATT?rev=$REV -H $HEADER
