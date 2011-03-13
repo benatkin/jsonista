@@ -6,13 +6,13 @@ exports.flatten = function(obj) {
       key = key.replace("/", "\\/");
     }
     return ((path === "") ? "" : path + "/") + key;
-  }
+  };
 
   var flattenArray = function(arr, path) {
     for (var i=0; i < arr.length; i++) {
       flattenElement(arr, path, i);
     }
-  }
+  };
 
   var flattenObject = function(obj, path) {
     for (var key in obj) {
@@ -20,7 +20,7 @@ exports.flatten = function(obj) {
         flattenElement(obj, path, key);
       }
     }
-  }
+  };
 
   var flattenElement = function(obj, path, key) {
     if (toString.call(obj[key]) === '[object Array]') {
@@ -30,7 +30,7 @@ exports.flatten = function(obj) {
     } else {
       flattened[join(path, key)] = obj[key];
     }
-  }
+  };
 
   flattenObject(obj, "");
   return flattened;
