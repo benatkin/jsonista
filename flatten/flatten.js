@@ -1,9 +1,10 @@
 exports.flatten = function(obj) {
-  var flattened = {};
+  var flattened = {},
+      escapeExpr = /([\\\/])/g;
 
   var join = function(path, key) {
-    if (key.indexOf && key.indexOf("/") != -1) {
-      key = key.replace("/", "\\/");
+    if (escapeExpr.test(key)) {
+      key = key.replace(escapeExpr, "\\$1");
     }
     return ((path === "") ? "" : path + "/") + key;
   };
